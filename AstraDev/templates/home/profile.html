@@ -1,103 +1,116 @@
-{%extends "home/layout.html"%}
 
-{%block body%}
-<section>
-<header>
-    <div class="logo">
-        <h1><a href="{%url 'AstraDev:profile'%}">Astra.</a></h1>
-        <h3>AstraDev Hub company </h3>
-    </div>
+{% extends "home/layout.html" %}
+{%load static%}
+
+{% block content %}
+<script src="{%static 'styles/profile.js'%}"></script>
+
     
-    <div class="navigation">
-         <a href="#">home</a>
-         <a href="#">about</a>
-         <a href="#">skills</a>
-         <a href="#">contacts</a>
-</div>
-</header>
+    <section id="full_body">
 
-<div class="home">
-   <div class="card">
-     <div class="profile">
-     <h1><b>🕸️</b></h1>  <br> 
-     </div>
-     <h3>AstraDev</h3>
-     <p><b>revitalize your business activities success with us</b></p>
-     
-   </div>
-   <div class="info">
-    <h2>Welcome to AstraDev Hub</h2>
-
-    <p>
-        We are skillfull packaged and experienced team <br>
-        we help businesses and companies operate online with...</p><br>
-        <ul>
-            <li>responsive and dynamic website</li>
-            <li>IOS android development</li>
-            <li>tasks automation</li>
-            <li>Graphics & Logo design</li>
-        </ul>
         
+        <div class="home">
+           <div class="card">
+             <div class="profile">
+             <h1><b>🕸️</b></h1>  <br> 
+             </div>
+             <h3>AstraDev</h3>
+             <p><b>revitalize your business activities success with us</b></p>
+             
+           </div>
+           <div class="info">
+            <h2>Welcome to AstraDev Hub</h2>
+        
+            <p>
+                We are skillful packaged and experienced team <br>
+                we help businesses and companies operate online with...</p><br>
+                <ul>
+                    <li>responsive and dynamic website</li>
+                    <li>IOS android development</li>
+                    <li>tasks automation</li>
+                    <li>Graphics & Logo design</li>
+                </ul>
+                
+            
+           </div>
+           
+           <div class="about">
+            <h3>Experience</h3>
+            <table>
+                <thead>
+                    <tr>
+                    <th>years</th>
+                    <th>fields</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>fullstack web</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>android development</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>automation</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        
+           </div>
+        </div>
+        
+        <header style="color: aliceblue; display: flex; align-items: center; justify-content: center;">
+            <h3>Our Services</h3>
+        </header>
+        
+        <div class="services">
+           
+          
+          <div class="web" id="work">
+            <h4>Web Design</h4>
+            <div class="img">
+                <img src="{% static 'code1.jpeg' %}" alt="Hi!">    
     
-   </div>
-   
-   <div class="about">
-    <h3>Experience</h3>
-    <table>
-        <thead>
-            <tr>
-            <th>years</th>
-            <th>fields</th>
-            </tr>
-        </thead>
+                </div>
+    
+            
+            <p>we provide our customers with the dynamic and responsive websites,
+                that enhance businesses to market online and reach wide milestones
+            </p>
+          </div>
+          <div class="apps" id="work">
+            <h4>Android IOS</h4>
+
+            <div class="img">
+            <img src="{% static 'android.jpeg' %}" alt="Hi!">    
+
+            </div>
+
+            <p>
+                we build apps to run over different IOS systems including android and IOS
+            </p>
+          </div>
+          <div class="automation" id="work">
+            <h4>Tasks Automation</h4>
+              <div class="img">
+                <img src="{% static 'automation.jpeg' %}" alt="Hi!">  
+              </div>
+             
+            <p>we help companies and businesses with tasks automation and task scheduling</p>
+             
+          </div>
+        </div>
+
+        {%include "home/contacts.html"%}
         
-        <tbody>
-            <tr>
-                <td>3</td>
-                <td>fullstack web</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>android development</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>automation</td>
-            </tr>
-        </tbody>
+        </section>
+        <br><br>
         
-    </table>
 
-   </div>
-</div>
-
-<header style="color: aliceblue; display: flex; align-items: center; justify-content: center;">
-    <h3>Our Services</h3>
-</header>
-
-<div class="services">
-   
-  
-  <div class="web">
-    <h4>web design</h4>
-    <img src="{static 'web.jpg'}" alt="web3">
-    <p>we provide our customers with the dynamic and responsive websites,
-        that enhance businesses to market online and reach wide milestones
-    </p>
-  </div>
-  <div class="apps">
-    <h4>android IOS</h4>
-    <p>
-        we build apps to run over different IOS systems including android and IOS
-    </p>
-  </div>
-  <div class="automation">
-    <h4>Tasks Automation</h4>
-    <p>we help companies and businesses with tasks automation and task scheduling</p>
-     
-  </div>
-</div>
-
-</section>
 
 {%endblock%}

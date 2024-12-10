@@ -1,225 +1,352 @@
-
-
-body{
-    background-color:#2f2d52;
+body {
+  background-color: #2f2d52;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-header{
-    position: relative;
-    top: 0;
-    padding: 0px 15px;
-    display: flex;
-    align-items: center;
+/* styling the navigation bar */
+
+header {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  background-image: linear-gradient(90deg, #3c3b51, #2f2d52);
+  color: white;
+}
+nav {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo h1 a {
+  text-decoration: none;
+  color: #bae4ac;
+}
+nav .navigation {
+  display: flex;
+  gap: 30px;
+}
+nav .navigation a {
+  text-decoration: none;
+  color: azure;
+  padding: 2px 40px;
+  letter-spacing: 1px;
+  transition: 1s ease-in-out;
+}
+nav .navigation a:hover {
+  color: aqua;
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: azure;
+  font-weight: 800;
+}
+
+/* Responsive Styling */
+@media (max-width: 700px) {
+  nav .hamburger {
+    display: block;
+  }
+  nav .navigation {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
     width: 100%;
-    justify-content: space-between;
-    border-bottom: #BAe4ac;
-    height: 50px;
-}
-header .logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header .logo h1 a{
-    text-decoration: none;
-    color: #BAe4ac;
-}
-header .logo h3{
-    margin-left: 5px;
-    padding-left: 7px;
-    font-size: 25px;
-    color: azure;
+    z-index: 1000;
+    background-image: linear-gradient(90deg, #3c3b51, #2f2d52);
 
-}
-section header .navigation{
-    
-    display: flex;
-    text-decoration: none;
-    justify-content:space-evenly;
-    align-items: flex-end;
-    padding: 0px 70px;
-}
-
-section header .navigation a{
-    text-decoration: none;
-    color: azure;
-    padding: 2px 40px;
-    letter-spacing: 1px;
-}
-section header .navigation a:hover{
-    color: aqua;
-}
-section hr{
-    color: black;
-}
-
-section .home{
-    border: thin;
-    background-color: #3c3b51;
-    height: auto;
-    display: flex;
-    justify-content: space-between; 
-    
-}
-
-section .home .card{
-    
-    border:solid #2f2d52;
-    border-style: double;
-    height: auto;
-    width: 140px;
-    display: flex;
-    border-top-left-radius: 40%;
-    border-bottom-right-radius: 40%;
-    margin: 15px;
-    padding: 15px 30px;
+    padding: 20px 0;
+  }
+  nav .navigation a {
+    padding: 10px 20px;
     text-align: center;
-    display: table-column;
-    
-    
-    
-}
-section .home .card .profile{
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    background-color: #2f2d52;
-    margin-left: 30px;
+  }
+  nav .navigation.show {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 0px;
-    border: solid grey;
-    border-width: 1px;
-    
+  }
 }
-section .home .card .profile h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    margin: 50px;
-    margin-top: 47%;
-    
+/* STYLE THE SECTION INSIDE BODY */
+
+section hr {
+  color: black;
 }
-section .home .card h3{
-    color: #BAe4ac;
-    text-decoration: underline;
-    
+
+section .home {
+  border: thin;
+  background-color: #3c3b51;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-section .home .card p b{
-    color: aliceblue;
+
+section .home .card {
+  border: solid #2f2d52;
+  border-style: double;
+  height: auto;
+  width: 140px;
+  display: flex;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  display: table-column;
 }
-section .home .info{
-    border: solid #2f2d52;
-    height: auto;
-    width: 340px;
+section .home .card .profile {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #2f2d52;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0px;
+  border: solid grey;
+  border-width: 1px;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+section .home .card .profile h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  margin: 50px;
+  margin-top: 47%;
+}
+section .home .card h3 {
+  color: #bae4ac;
+  text-decoration: underline;
+}
+section .home .card p b {
+  color: aliceblue;
+}
+section .home .info {
+  border: solid #2f2d52;
+  height: auto;
+  width: 340px;
+  text-align: center;
+  margin: 15px;
+  color: aliceblue;
+}
+section .home .info h2 {
+  color: #bae4ac;
+  text-decoration: overline;
+}
+section .home .info ul {
+  text-align: left;
+  margin-top: 0px;
+}
+section .home .about {
+  border: solid #2f2d52;
+  height: 230px;
+  width: 340px;
+  margin: 15px;
+  color: aliceblue;
+  border-bottom-left-radius: 30%;
+  border-top-right-radius: 30%;
+  justify-content: center;
+  overflow: hidden;
+  border-style: double;
+}
+section .home .about h3 {
+  letter-spacing: 2px;
+  text-align: center;
+  color: #bae4ac;
+  text-decoration: overline;
+}
+section .home .about table {
+  margin-left: 30px;
+}
+
+section .home .about table th,
+td {
+  border: thin #bae4ac;
+  border-collapse: collapse;
+
+  padding: 6px 30px;
+  text-align: left;
+  padding-right: 15px;
+}
+
+section .services {
+  overflow: hidden;
+  border: thin;
+  background-color: #3c3b51;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+section .services #work {
+  width: 280px;
+}
+
+section .services .web {
+  color: aliceblue;
+  border: solid #2f2d52;
+  text-align: center;
+  margin: 15px;
+
+  height: auto;
+  background-color: #3c3b51;
+  display: grid;
+  justify-items: center;
+  padding: 15px 30px;
+  margin-top: 10px;
+}
+section .services .web h4 {
+  color: #bae4ac;
+  text-decoration: underline;
+}
+section .services .apps {
+  color: aliceblue;
+  background-color: #3c3b51;
+  border: solid #2f2d52;
+
+  height: auto;
+  padding: 15px 30px;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  margin: 15px;
+  justify-items: center;
+  margin-top: 10px;
+}
+
+section .services .apps h4 {
+  color: #bae4ac;
+  text-decoration: underline;
+}
+
+section .services .automation {
+  color: aliceblue;
+  text-align: center;
+  border: solid #2f2d52;
+  margin: 15px;
+  background-color: #3c3b51;
+  height: auto;
+  padding: 15px 30px;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 10px;
+}
+section .services .automation h4 {
+  color: #bae4ac;
+  text-decoration: underline;
+}
+
+section .services #work .img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #2f2d52;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0px;
+  border: solid grey;
+  border-width: 1px;
+}
+
+section .services #work .img img {
+  height: 80px;
+  width: 80px;
+}
+
+section .services .contacts {
+  color: aliceblue;
+  border: solid #2f2d52;
+  text-align: center;
+  margin: 15px;
+  background-image: linear-gradient(45deg, #3c3b51, #2f2d52);
+  width: 300px;
+  height: auto;
+  background-color: #3c3b51;
+  display: grid;
+  justify-items: center;
+  padding: 15px 30px;
+  margin-top: 10px;
+  background-image: linear-gradient(45deg, #2f2d52 20%, #3c3b51);
+
+}
+section .services .contacts .contact_info {
+  color: aliceblue;
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+section .services .socials {
+  color: aliceblue;
+  border: solid #2f2d52;
+  text-align: center;
+  margin: 15px;
+  background-image: linear-gradient(45deg, #2f2d52 20%, #3c3b51);
+  width: 300px;
+  height: auto;
+  background-color: #3c3b51;
+  flex-direction: column;
+  justify-items: center;
+  padding: 15px 30px;
+  margin-top: 10px;
+}
+section .services .socials .social_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+section .services .socials .social_img img {
+  height: 20px;
+  width: 20px;
+  padding: 0 25px;
+}
+
+section .services .socials .social_img {
+}
+
+footer{
+    background-image:90deg,#3c3b51,#2f2d52 ;
+    color: white;
     text-align: center;
-    margin: 15px;
-    color: aliceblue;
-   
-    
-}
-section .home .info h2{
-    color:#BAe4ac;
-    text-decoration:overline;
-
-}
-section .home .info ul{
-    text-align: left;
-    margin-top: 0px;
-    
-}
-section .home .about{
-    border: solid #2f2d52;
-    height: 230px;
-    width: 340px;
-    margin: 15px;
-    color: aliceblue;
-    border-bottom-left-radius: 30%;
-    border-top-right-radius: 30%;
-    justify-content: center;
-    overflow: hidden;
-    border-style: double;
-}
-section .home .about h3{
-    letter-spacing: 2px;
-    text-align: center;
-    color: #BAe4ac;
-    text-decoration: overline;
-    
-}
-section .home .about table{
-    margin-left: 30px;
-}
-
-
-section .home .about table th,td{
-    border: thin #BAe4ac;
-    border-collapse: collapse;
-
-    padding: 6px 30px;
-    text-align: left;
-    padding-right: 15px;
-    
-}
-
-section .services{
-    height: auto;
-    width: auto;
-   
-    height: 270px;
-    display: flex;
-    justify-content: space-between; 
-    
-    
-}
-
-section .services .web{
-    color:aliceblue;
-    border: solid #3c3b51;
-    width: 340px;
-    height: auto;
-    background-color:#3c3b51;
-    display: grid;
-    justify-items: center;
-    padding: 15px 30px;
-    margin-top: 10px;
-
-    
-}
-section .services .web h4{
-    color: #BAe4ac;
-    text-decoration: underline;
-}
-section .services .apps{
-    color: aliceblue;
-    background-color: #3c3b51;
-    width: 340px;
-    height: auto;
-    padding: 15px 30px;
-    align-items: center;
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-}
-
-section .services .apps h4{
-    color: #BAe4ac;
-    text-decoration: underline;
-
-}
-
-section .services .automation{
-    color: aliceblue;
-    background-color: #3c3b51;
-    width: 340px;
-    height: auto;
-    padding: 15px 30px;
-    align-items: center;
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-}
+    padding: 30px 0;
+    margin-top: 20px;
 
 }
